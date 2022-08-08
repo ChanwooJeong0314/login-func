@@ -3,8 +3,12 @@ const app = express();
 const port : number = 3000;
 
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const UserController = require('./User/UserController');
+app.use("/user",UserController);
 
 
 app.listen(port,()=> console.log(`listening on http://localhost:${port}`));
